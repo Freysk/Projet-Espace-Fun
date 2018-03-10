@@ -1,0 +1,130 @@
+/* VAR */
+
+$font-title: 'Quicksand',
+sans-serif;
+$font-bodytext: 'Quicksand',
+sans-serif;
+
+/* STYLES to EXTEND */
+
+.title {
+  @include myfont($font-title);
+  font-weight: 600;
+  &--primary {
+    font-size: 3em;
+    margin-bottom: 0;
+    line-height: 1em;
+    @media screen and (min-width: $tablet) {
+      font-size: 5em;
+    }
+  }
+  &--secondary {
+    font-size: 2.5em;
+    line-height: 1em;
+    margin-bottom: .5em;
+    text-align: center;
+    @media screen and (min-width: $tablet) {
+      font-size: 4em;
+    }
+  }
+  &--third {
+    font-size: 1.6em;
+  }
+  &--sail {
+    font-size: 2em;
+    text-transform: uppercase;
+  }
+  &--article {
+    font-size: 1.2em;
+    &-last {
+      font-size: 1.6em;
+    }
+  }
+  &--footer {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: .5em;
+  }
+}
+
+.bodytext {
+  @include myfont($font-bodytext);
+  font-weight: 400;
+  &--subtitle {
+    font-size: 1.6em;
+    margin-bottom: 2em;
+    @media screen and (min-width: $tablet) {
+      font-size: 2.5em;
+    }
+  }
+  &--primary {
+    font-size: 1.4em;
+    margin-bottom: 1em;
+    max-width: $tablet;
+    @media screen and (min-width: $mobileL) {
+      font-size: 1.6em;
+    }
+  }
+  &--article {
+    font-size: 1.2em;
+    &-last {
+      font-size: 1.2em;
+    }
+    @media screen and (min-width:$tablet){
+      font-size: 1.4em;
+      &-last {
+        font-size: 1.4em;
+        line-height: 1.8em;
+      }
+    }
+  }
+  &--date {
+    font-size: 1em;
+    &-last {
+      font-size: 1.2em;
+    }
+  }
+  &--lang {
+    font-size: 1.6em;
+    text-transform: uppercase;
+  }
+  &--wind {
+    font-size: 1.6em;
+    font-weight: 500;
+    text-align: center;
+  }
+  &--footer {
+    font-size: 1.2em;
+  }
+}
+
+.btn {
+  @include myfont($font-bodytext);
+  font-weight: 600;
+  &--article {
+    font-size: 1em;
+  }
+}
+
+.navbar {
+  @include myfont($font-title);
+  text-align: center;
+  &__link {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    &--sub {
+      font-size: 1.6em;
+      font-weight: 400;
+    }
+    @media screen and (min-width:$mobileL) {
+      font-size: 1em;
+      &--sub {
+        font-size: .8em;
+      }
+    }
+  }
+}

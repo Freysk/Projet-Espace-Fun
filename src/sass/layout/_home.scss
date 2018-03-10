@@ -1,0 +1,269 @@
+// SAILING SECTION
+.sailing {
+  background-color: $color-blue;
+  color: $color-white;
+  text-align: center;
+  padding: 8em 0;
+  &__title-block {
+    padding: 0 $margin-mobile;
+    padding-bottom: 2em;
+  }
+  &__title {
+    @include flex($d: column, $w:nowrap, $j-c:center, $a-i:center);
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+    &::before {
+      @extend %subtitle-icon;
+      background: url('../img/icon_basenautique.png') center/cover;
+    }
+  }
+} // VARIABLES LOCALES
+$offset-activities: 0.75em;
+.sailingActivities {
+  &-container {
+    @include flex($d: column, $w:wrap, $j-c:space-between, $a-i:stretch);
+    @extend %mBot;
+    @media screen and (min-width: $mobileL) {
+      flex-direction: row;
+      max-width: $tablet;
+      margin: 0 auto;
+      padding: 2em 8em;
+    }
+  }
+  &__block {
+    position: relative;
+    width: 80vw;
+    height: 50vw;
+    margin-bottom: 5em;
+    @extend %shadow;
+    &::before {
+      @extend %pseudo-everywhere;
+      background: linear-gradient(rgba($color: $color-blue, $alpha: 0.8), rgba($color: $color-orange, $alpha: 0.3));
+    }
+    @media screen and (min-width: $mobileL) {
+      width: calc(50% - 2em);
+      height: 250px;
+    }
+    &:nth-of-type(even) {
+      // Block pairs
+      align-self: flex-end;
+      .sailingActivities__title {
+        left: -$offset-activities;
+      } // MOBILE BREAKDOWN
+      @media screen and (min-width: $mobileL) {
+        align-self: auto;
+        .sailingActivities__title {
+          left: $offset-activities;
+        }
+      }
+    }
+    &:nth-of-type(odd) {
+      // Block impairs
+      @media screen and (min-width: $mobileL) {
+        .sailingActivities__title {
+          left: -$offset-activities;
+        }
+      }
+    }
+  }
+  &__title {
+    border: $borderWidth solid $color-white;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: $offset-activities;
+    left: $offset-activities;
+    @extend %shadow;
+    @media screen and (min-width: $mobileL) {
+      height: 90%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.moreActivities {
+  &__title {
+    margin-bottom: 2em;
+  }
+  &__items-list {
+    @media screen and (min-width: $mobileL) {
+      @include flex($d:row, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+    }
+  }
+  &__item {
+    @media screen and (min-width: mobileL) {
+      width: 30% !important;
+    }
+    @include flex($d: column,
+    $w:nowrap,
+    $j-c:center,
+    $a-i:center);
+  }
+  &__illus {
+    max-width: 70%;
+  }
+  &__item-title {
+    text-align: center;
+    padding: .5em 0 1em;
+  }
+  &__excerpt {
+    text-align: center;
+    margin-bottom: 1.5em;
+    max-width: 15em;
+  }
+  &__pagination {
+    position: relative;
+  }
+  &__btn {
+    margin-bottom: 2em;
+    &-prev {
+      left: 0;
+      background: url('../img/icon_arrow.png') no-repeat center !important;
+      transform: rotate(90deg);
+    }
+    &-next {
+      right: 0;
+      transform: rotate(-90deg);
+      background: url('../img/icon_arrow.png') no-repeat center !important;
+    }
+  }
+}
+
+.news {
+  background-color: $color-orange;
+  color: $color-white;
+  position: relative;
+  &__title {
+    @include flex($d: column, $w:nowrap, $j-c:center, $a-i:center);
+    @media screen and (min-width: $tablet) {
+      flex-direction: row;
+    }
+    &::before {
+      @extend %subtitle-icon;
+      background: url('../img/icon_agenda.png') center/cover;
+    }
+  }
+  &__subtitle {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 2em;
+  }
+  &::before {
+    @extend %fxDust;
+    top: 0;
+    transform: rotate(180deg);
+  }
+}
+
+.articles-container {
+  @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+  color: $color-black;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.article {
+  background-color: $color-white;
+  margin-bottom: 1em;
+  @extend %shadow;
+  @include flex($d: row, $w:nowrap, $j-c:space-between, $a-i:stretch);
+  &__text-container {
+    padding: 1em;
+    @include flex($d: row, $w:nowrap, $j-c:flex-start, $a-i:center);
+  }
+  &__title {
+    margin-bottom: 0;
+    padding-left: 1em;
+  }
+  &__excerpt {
+    display: none;
+  }
+  &__btn {
+    align-self: flex-end;
+    cursor: pointer;
+  } // DERNIER ARTICLE
+  &--last {
+    cursor: auto;
+    @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+    &__text-container {
+      flex-direction: column; // Contrediction de .article
+      align-items: flex-start;
+      padding: 3em;
+    }
+    &__illus {
+      width: 100%;
+      height: 50vw;
+    }
+  }
+}
+
+@media screen and (min-width:$tablet) {
+  .articles {
+    &-container {
+      @include flex($d: row, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+      max-width: 1024px;
+    }
+    &-minimized {
+      @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+      margin-left: 2em;
+    }
+  }
+  .article {
+    flex-grow: 1;
+    width: 100%;
+    @include flex($d: column, $w:nowrap, $j-c:space-between, $a-i:stretch);
+    &__text-container {
+      @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:flex-start);
+    }
+    &__title {
+      padding-left: 0;
+    }
+    &__excerpt {
+      display: block;
+    } // DERNIER ARTICLE
+    &--last {
+      width: 200%;
+      background-color: transparent;
+      box-shadow: none;
+      &__text-container {
+        position: relative;
+      }
+      &__date {
+        position: absolute;
+        background-color: $color-orange;
+        top: 2em;
+        right: .6em;
+        padding: 0 1em 0;
+        color: $color-white;
+      }
+      &__title {
+        position: absolute;
+        background-color: $color-orange;
+        top: 0;
+        padding: 0.3em 1em;
+        color: $color-white;
+      }
+      &__excerpt {
+        position: relative;
+        top: 1em;
+        left: -4em;
+      }
+      &__illus {
+        height: 40em;
+        &::after {
+          content: '';
+          display: block;
+          height: 100%;
+          width: 100%;
+          border: $borderWidth solid $color-white;
+          position: relative;
+          top: 2em;
+          right: 2em;
+        }
+      }
+    }
+  }
+}

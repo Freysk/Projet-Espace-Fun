@@ -1,0 +1,46 @@
+$margin-mobile: 5em;
+$margin-tablet: 8em;
+%mBot {
+  margin-bottom: $margin-mobile;
+  @media screen and (min-width: $tablet) {
+    margin-bottom: $margin-tablet;
+  }
+}
+
+$size-icons-subtitle: 50px;
+%subtitle-icon {
+  content: '';
+  display: block;
+  width: $size-icons-subtitle;
+  height: $size-icons-subtitle;
+  margin: .5em;
+  @media screen and (min-width: $tablet) {
+    margin: 0 .5em;
+  }
+}
+
+%fxDust {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 2.8vw;
+  background-image: url('../img/fx_sable.png');
+  background-size: cover;
+  left: 0;
+}
+
+%shadow {
+  box-shadow: 0 0 10px rgba($color: $color-black, $alpha: 0.2);
+}
+
+%pseudo-everywhere {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+%basic-transition {
+  transition: all .3s ease-in-out;
+}

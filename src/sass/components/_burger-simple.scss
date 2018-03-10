@@ -1,0 +1,88 @@
+.burger {
+  position: absolute;
+  top: 30px;
+  right: 30px; // transform: rotate(90deg);
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 35%;
+  border: 4px solid $color-white;
+  background-color: inherit;
+  @extend %shadow;
+  .svg-container {
+    position: relative;
+    overflow: hidden;
+    height: 30px;
+    background-image: url('../img/burger_vague.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: -2px;
+    // transition: all .2s ease-in-out;
+  }
+  &:focus {
+    outline: none;
+  } // &::after {
+  //   content: 'Menu';
+  //   text-transform: uppercase;
+  //   position: relative;
+  //   top: -35px;
+  //   color: $color-white;
+  // }
+}
+
+.active {
+  .svg-container {
+    background-position-x: -59px;
+  }
+}
+
+.burger-simple {
+  .burger-simple__bar {
+    display: block;
+    width: 80%;
+    background: #000;
+    position: absolute;
+    height: 2px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s all ease-in-out;
+    &--top {
+      top: 25%;
+    }
+    &--mid {
+      top: 50%;
+    }
+    &--bot {
+      top: 75%;
+    }
+  }
+}
+
+.burger-simple--hover {
+  .burger-simple__bar {
+    transform: translate(-50%, -50%);
+    &--top {
+      top: 35%;
+    }
+    &--bot {
+      top: 65%;
+    }
+  }
+}
+
+.burger-simple--active {
+  .burger-simple__bar {
+    &--top {
+      transform: translate(-50%, -50%) rotate(45deg);
+      top: 50%;
+    }
+    &--bot {
+      transform: translate(-50%, -50%) rotate(-45deg);
+      top: 50%;
+    }
+    &--mid {
+      opacity: 0;
+    }
+  }
+}
