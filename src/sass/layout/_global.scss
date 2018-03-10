@@ -149,6 +149,9 @@ body {
     left: auto;
     height: auto;
     transform: translate(0, 0);
+    @media screen and (min-width:$desktopS){
+      width: 100em;
+    }
   }
   .logo {
     position: relative;
@@ -173,6 +176,9 @@ body {
       top: .5em;
       border: 1px solid $color-white;
       border-top: 0;
+      @media screen and (min-width:$desktopS){
+        // top: 0.7em;
+      }
     }
     &__item--lvl2 {
       padding: .2em 0; // augmente la distance entre les ELs
@@ -203,6 +209,9 @@ body {
       width: 100%;
       background-color: $color-white;
       box-shadow: 0 0 5px rgba($color: $color-black, $alpha: 0.4);
+      @media screen and (min-width:$desktopS){
+        top: 3.5em;
+      }
     }
   }
   .module-lang {
@@ -339,6 +348,9 @@ body {
 
 .intro {
   text-align: center;
+  &--accueil {
+    background: $color-white;
+  }
   &__title {
     margin-bottom: 1em;
   }
@@ -361,7 +373,25 @@ body {
   }
 }
 
-
+.parallax {
+  &--home {
+    min-height: 200px;
+    height: 30vw;
+    overflow: hidden;
+    position: relative;
+    &__img {
+      height: 100vh;
+      min-width: 100vw;
+      position: fixed;
+      top: 0;
+      z-index: -1;
+      @media screen and (min-width: $tablet) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
 
 .newsletter {
   @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:center);

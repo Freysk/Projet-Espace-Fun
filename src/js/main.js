@@ -16,7 +16,7 @@ $burger.click(function(){
 })
 
 $(document).ready(function() {
-  if (window.matchMedia("(min-width: 580px)").matches) {
+  if (window.matchMedia("(min-width: 800px)").matches) {
     var $swiperXtra = $('.moreActivities__pagination').add('.moreActivities__btn-next').add('.moreActivities__btn-prev');
     
     $swiperContainer.removeClass('swiper-container')
