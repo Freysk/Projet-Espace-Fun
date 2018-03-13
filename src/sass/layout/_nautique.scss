@@ -1,0 +1,97 @@
+.cta--shop {
+  margin-top: 0;
+}
+
+.options {
+  width: 100%;
+  background-color: #eee;
+  padding-top: 3em;
+  padding-bottom: 10em;
+}
+
+.option {
+  @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:stretch);
+  width: 90%;
+  max-width: 1024px;
+  margin: 0 auto 3em;
+  &__illus {
+    width: 100%;
+  }
+  &__block {
+    @include flex($d:column, $w:nowrap, $j-c:flex-end, $a-i:flex-end);
+    background-color: $color-white;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    min-height: 30em;
+    @extend %shadow;
+    &--btn-center {
+      align-items: center;
+    }
+  }
+  &__text-container {
+    @include posa($top: 50%, $left:50%, $x:-50%, $y:-50%);
+    text-align: center;
+    padding: 4em;
+    width: 100%;
+  }
+  &__bodytext-container {
+    p {}
+  }
+  &__btn {
+    background-color: transparent;
+    border: 0;
+    z-index: 2;
+    &--std {
+      margin-bottom: 3em;
+      // width: 10em;
+      font-size: 1.2em;
+      border: 2px solid $color-black;
+      z-index: 2;
+    }
+  }
+}
+
+@media screen and (min-width:$mobileL){
+  .option {
+    &__text-container {
+      max-width: 60em;
+      padding: 8em;
+    }
+  }
+}
+
+@media screen and (min-width:$tablet) {
+  .options {
+    padding-top: 10em;
+    padding-bottom: 15em;
+  }
+  .option {
+    @include flex($d: row, $w:wrap, $j-c:flex-start, $a-i:stretch);
+    height: 40em;
+    &__illus {
+      width: 40%;
+    }
+    &__block {
+      width: 60%;
+      height: 90%;
+      top: 2em;
+      right: 2em;
+    }
+    &__text-container {
+      padding: 8em;
+    }
+  }
+  &.option:nth-of-type(even) {
+    .option__block {
+      right: auto;
+      left: 2em;
+    }
+    .option__illus {
+      order: 1;
+    }
+    .option__btn {
+      align-self: flex-start;
+    }
+  }
+}

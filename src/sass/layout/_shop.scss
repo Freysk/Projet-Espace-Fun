@@ -31,14 +31,12 @@
   }
 }
 
-.gift {
-  margin-top: 7em;
+.cta {
   position: relative;
   background-color: $color-red;
   color: $color-white;
   text-align: center;
   &__title {
-    padding-top: 1em;
     margin-bottom: 1.2em;
   }
   &__bodytext-container {
@@ -49,28 +47,70 @@
       margin-bottom: 1em;
     }
   }
-  &::before {
-    content: '';
-    position: absolute;
-    top: -7.5em;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    height: 120px;
-    width: 120px;
-    background: url('../img/icon_gift.png') center/cover;
+  &--icon {
+    margin-top: 7em;
+    &__title {
+      padding-top: 1em;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      display: block;
+      height: 120px;
+      width: 120px;
+    }
+  }
+  &--gift {
+    &::before {
+      top: -7.5em;
+      background: url('../img/icon_gift.png') center/cover;
+    }
+  }
+  &--booking {
+    background-color: $color-blue;
+  }
+  &--shop {
+    z-index: 0;
+    &::before {
+      background: url('../img/icon-shop.png') center/cover;
+      top: -10em;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .1;
+      background: url('../img/header_shop.jpg') center/cover;
+      z-index: -1;
+    }
   }
 }
 
 @media screen and (min-width:$tablet) {
-  .gift {
+  .cta {
     &__bodytext-container {
       margin-bottom: 5em;
     }
-    &::before {
-      height: 150px;
-      width: 150px;
-      top: -10em;
+    &--icon {
+      &::before {
+        height: 150px;
+        width: 150px;
+      }
+    }
+    &--gift {
+      &::before {
+        top: -10em;
+      }
+    }
+    &--shop {
+      &::before {
+        top: -12.5em;
+      }
     }
   }
 }
