@@ -1,136 +1,245 @@
 function initMap() {
 
     // Center of focus - Emplacement
-    var location = { lat: 50.793202, lng: 4.3197965 };
-
-  // COLORS
-  var palette = {
-    geometry : {
-      background : '#242f3e',
-      highway : '#746855',
-      road : '#38414e',
-      park : '#263c3f',
-      water : '#17263c',
-      transit : '#2f3948',
-      strokes : {
-        highway : '#1f2835',
-        roadDetails : '#212a37'
-      }
-    },
-    labels : {
-      labels : '#746855',
-      location : '#d59563',
-      highway : '#f3d19c',
-      park : '#6b9a76',
-      road : '#9ca5b3',
-      water : '#515c6d',
-      strokes : {
-        water : '#17263c',
-        label : '#242f3e'
-      }
-    }
-  };
+  var location = { lat: 50.19, lng: 4.345 };
 
   // Map Customization Base
   var map = new google.maps.Map(document.getElementById('gmap'), {
-    zoom: 16,
+    zoom: 14,
     center: location,
+    disableDefaultUI: true,
+    streetViewControl: true,
+    
+    zoomControl: true,
+    scaleControl: true,
+    rotateControl: true,
+    streetViewControlOptions: {
+      position: google.maps.ControlPosition.TOP_RIGHT,
+    },
     styles: [
       {
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.background}]
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#ebe3cd"
+          }
+        ]
       },
       {
-        elementType: 'labels.text.stroke',
-        stylers: [{color: palette.labels.strokes.label}]
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#523735"
+          }
+        ]
       },
       {
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.label}]
+        "elementType": "labels.text.stroke",
+        "stylers": [
+          {
+            "color": "#f5f1e6"
+          }
+        ]
       },
       {
-        featureType: 'administrative.locality',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.location}]
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "color": "#c9b2a6"
+          }
+        ]
       },
       {
-        featureType: 'poi',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.location}]
+        "featureType": "administrative.land_parcel",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "color": "#dcd2be"
+          }
+        ]
       },
       {
-        featureType: 'poi.park',
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.park}]
+        "featureType": "administrative.land_parcel",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#ae9e90"
+          }
+        ]
       },
       {
-        featureType: 'poi.park',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.park}]
+        "featureType": "landscape.natural",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#dfd2ae"
+          }
+        ]
       },
       {
-        featureType: 'road',
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.road}]
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#dfd2ae"
+          }
+        ]
       },
       {
-        featureType: 'road',
-        elementType: 'geometry.stroke',
-        stylers: [{color: palette.geometry.strokes.roadDetails}]
+        "featureType": "poi",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#93817c"
+          }
+        ]
       },
       {
-        featureType: 'road',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.road}]
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#a5b076"
+          }
+        ]
       },
       {
-        featureType: 'road.highway',
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.highway}]
+        "featureType": "poi.park",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#447530"
+          }
+        ]
       },
       {
-        featureType: 'road.highway',
-        elementType: 'geometry.stroke',
-        stylers: [{color: palette.geometry.strokes.highway}]
+        "featureType": "road",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#f5f1e6"
+          }
+        ]
       },
       {
-        featureType: 'road.highway',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.highway}]
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#fdfcf8"
+          }
+        ]
       },
       {
-        featureType: 'transit',
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.transit}]
+        "featureType": "road.highway",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#f8c967"
+          }
+        ]
       },
       {
-        featureType: 'transit.station',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.location}]
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "color": "#e9bc62"
+          }
+        ]
       },
       {
-        featureType: 'water',
-        elementType: 'geometry',
-        stylers: [{color: palette.geometry.water}]
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#e98d58"
+          }
+        ]
       },
       {
-        featureType: 'water',
-        elementType: 'labels.text.fill',
-        stylers: [{color: palette.labels.water}]
+        "featureType": "road.highway.controlled_access",
+        "elementType": "geometry.stroke",
+        "stylers": [
+          {
+            "color": "#db8555"
+          }
+        ]
       },
       {
-        featureType: 'water',
-        elementType: 'labels.text.stroke',
-        stylers: [{color: palette.labels.strokes.water}]
+        "featureType": "road.local",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#806b63"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#dfd2ae"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#8f7d77"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.line",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+          {
+            "color": "#ebe3cd"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.station",
+        "elementType": "geometry",
+        "stylers": [
+          {
+            "color": "#dfd2ae"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+          {
+            "color": "#b9d3c2"
+          }
+        ]
+      },
+      {
+        "featureType": "water",
+        "elementType": "labels.text.fill",
+        "stylers": [
+          {
+            "color": "#92998d"
+          }
+        ]
       }
     ]
   });
 
 
   // Marker Customization
-  var iconBase = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png';
+  var iconBase = '../img/icon_gmap.png';
+  var locationIcon = { lat: 50.189, lng: 4.35345 };
+  
   var marker = new google.maps.Marker({
-    position: location,
+    position: locationIcon,
     map: map,
     icon: iconBase
   });

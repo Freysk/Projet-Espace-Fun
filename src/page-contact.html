@@ -9,7 +9,7 @@
   <meta name="author" content="Espace Fun">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Espace Fun • Bienvenue</title>
+  <title>Espace Fun • Contactez-nous</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/css/swiper.min.css">
   <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
@@ -20,6 +20,15 @@
 
   <!-- HEADER -->
   <header class="header header--contact">
+    <blockquote class="quote" cite="Laurent Hubeaux">
+      <p class="quote__text bodytext bodytext--quote">" Les sports nautiques, c'est ma passion depuis près de 30 ans... J'espère vous la transmettre lors de votre visite
+        à l'Espace Fun&nbsp;! "</p>
+      <div class="quote__author">
+        <span class="quote__author-name bodytext bodytext--authorName">Laurent Hubeaux</span>
+      </div>
+    </blockquote>
+
+    </div>
     <!-- NAVIGATION -->
     <div class="navigation">
       <a href="index.html" class="logo">
@@ -95,13 +104,217 @@
   <main class="content">
 
     <!-- SECTION PRESENTATION ESPACE FUN -->
-    <section class="intro section">
-      <h1 class="intro__title title title--primary">Espace Fun</h1>
-      <h2 class="intro__subtitle bodytext bodytext--subtitle">...de nature à sensations...</h2>
-      <p class="intro__bodytext bodytext bodytext--primary">Un oasis de détente situé sur les Lacs de l’Eau d’Heure, à deux pas de Charleroi et de Namur. </p> 
-      <p class="intro__bodytext bodytext bodytext--primary">Avec sa base nautique et son espace plage vous y trouverez de quoi ravir petits et grands, débutants ou confirmés et vos sorties en groupes!</p>
+    <section class="contactInfos">
+      <div class="section section--contactInfos">
+        <h1 class="contactInfos__title title title--primary">Contact</h1>
+
+        <div class="contactInfos__container">
+          <div class="contactInfos__part contactInfos__part--1">
+            <h2 class="contactInfos__title title title--contact">L'Espace Fun</h2>
+            <div class="contactInfos__datas bodytext bodytext--data">
+              <div class="contactInfos__data--half bodytext">
+                <div class="contactInfos__data--container">
+                  <i class="fas fa-map-marker fa-lg"></i>
+                  <address class="contactInfos__data contactInfos__data--address">
+                    Rue du Bois du Four, SN
+                    <br> 6440 Froid-Chappelle
+                  </address>
+                </div>
+                <div class="contactInfos__data--container">
+                  <i class="fas fa-phone"></i>
+                  <a class="contactInfos__data contactInfos__data--phone" href="tel:+32 485 91 99 90">+32 485 91 99 90</a>
+                </div>
+                <div class="contactInfos__data--container">
+                  <i class="fas fa-envelope"></i>
+                  <a class="contactInfos__data contactInfos__data--email" href="mailto:info@espacefun.be">info@espacefun.be</a>
+                </div>
+              </div>
+              <div class="contactInfos__data--half bodytext">
+                <div class="contactInfos__data--container contactInfos__data--extra">
+                  <i class="fas fa-building"></i>
+                  <div class="contactInfos__data contactInfos__data--company">
+                    <strong>N° entreprise :</strong>
+                    <br> BE 0 880 630 435
+                  </div>
+                </div>
+                <div class="contactInfos__data--container">
+                  <i class="fas fa-info-circle"></i>
+                  <div class="contactInfos__data contactInfos__data--company">
+                    <strong>BNP-Paribas Fortis :</strong>
+                    <br> BE31 001-4846681-55
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="contactInfos__part contactInfos__part--2 bodytext bodytext--msg">
+            <div class="contactInfos__msg">
+              <div class="contactInfos__msg-text bodytext--msg-text">
+                <p>Étant à votre service tout au long de la journée, je ne sais malheureusement pas toujours répondre comme
+                  je le voudrais à vos appels téléphoniques. Je vous conseille donc de me joindre de préférence par sms ou
+                  par e-mail.</p>
+              </div>
+              <div class="contactInfos__msg-from bodytext--msg-from">
+                <div class="contactInfos__msg-person bodytext--msg-person">Laurent Hubeaux</div>
+                <div class="contactInfos__msg-occupation bodytext--msg-occupation">Gérant de l'Espace Fun</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="access">
+          <h2 class="access__title title title--contact">Accès</h2>
+          <div class="access__bodytext bodytext bodytext--contact">
+            <p>A pied, direction le lac, traverser le village de vacances (Landal) par l'allée centrale, pour atteindre la plage
+              e sable et le Pavillon de la Plage avec sa passerelle surplombant le lac (signe distinctif)... Vous êtes arrivé
+              à l'Espace Fun.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <div id='gmap'></div>
+        <div class="schedule font12">
+          <h2 class="schedule__title title title--contact">Heures d'ouverture <hr></h2>
+          <div class="schedule__table bodytext bodytext--schedule">
+            <div class="schedule__row">
+              <div class="schedule__col"></div>
+              <strong class="schedule__col">Activités nautiques</strong>
+              <strong class="schedule__col">Food & Drink</strong>
+            </div>
+            <div class="schedule__row">
+              <strong class="schedule__col">
+                Avril
+                <em>*</em>
+              </strong>
+              <div class="schedule__col">10 - 18h</div>
+              <div class="schedule__col">10 - 20h</div>
+            </div>
+            <div class="schedule__row">
+              <strong class="schedule__col">
+                Mai / Juin
+                <em>*</em>
+              </strong>
+              <div class="schedule__col">10 - 18h</div>
+              <div class="schedule__col">10 - 20h
+                <br>
+                <span>Jusque 22h le samedi</span>
+              </div>
+            </div>
+            <div class="schedule__row">
+              <strong class="schedule__col">
+                Juillet / Août
+              </strong>
+              <div class="schedule__col">10 - 19h</div>
+              <div class="schedule__col">10 - 20h
+                <br>
+                <span>Jusque 23h le samedi</span>
+              </div>
+            </div>
+            <div class="schedule__row">
+              <strong class="schedule__col">
+                Sept. / Oct.
+                <em>*</em>
+              </strong>
+              <div class="schedule__col">10 - 18h</div>
+              <div class="schedule__col">10 - 18h</div>
+            </div>
+          </div>
+          <small class="schedule__warning bodytext bodytext--schedule-warning">
+            <em>*</em> Hors période estivale, en semaine, les activités et le Food & Drink se font sur réservation par sms ou
+            email.
+          </small>
+        </div>
+      </div>
     </section>
-    
+
+    <section class="faq section font12">
+      <h3 class="faq__title title title--contactSection">Foires aux questions</h3>
+      <div class="faq__question-container">
+        <h4 class="faq__question title title--faq">Ceci est la première question ? </h4>
+        <div class="faq__answer-container bodytext bodytext--answer">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, commodi obcaecati, quia consequatur animi optio
+            eveniet totam earum libero quae voluptate quidem modi, voluptatem repellat cum possimus in adipisci recusandae.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quam maiores ipsa. Omnis est obcaecati nulla quo
+            illum voluptatibus sed, commodi velit fugit, unde officiis quia optio, eum id ratione.</p>
+        </div>
+      </div>
+      <div class="faq__question-container">
+        <h4 class="faq__question title title--faq">Ceci est la première question ? </h4>
+        <div class="faq__answer-container bodytext bodytext--answer">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, commodi obcaecati, quia consequatur animi optio
+            eveniet totam earum libero quae voluptate quidem modi, voluptatem repellat cum possimus in adipisci recusandae.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quam maiores ipsa. Omnis est obcaecati nulla quo
+            illum voluptatibus sed, commodi velit fugit, unde officiis quia optio, eum id ratione.</p>
+        </div>
+      </div>
+      <div class="faq__question-container">
+        <h4 class="faq__question title title--faq">Ceci est la première question ? </h4>
+        <div class="faq__answer-container bodytext bodytext--answer">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, commodi obcaecati, quia consequatur animi optio
+            eveniet totam earum libero quae voluptate quidem modi, voluptatem repellat cum possimus in adipisci recusandae.</p>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum quam maiores ipsa. Omnis est obcaecati nulla quo
+            illum voluptatibus sed, commodi velit fugit, unde officiis quia optio, eum id ratione.</p>
+        </div>
+      </div>
+      <button class="faq__btn">
+        <div class="faq__btn-plus btn btn--primary btn--round">+</div>
+        <span class="faq__btn-title title">Afficher plus...</span>
+      </button>
+
+    </section>
+
+    <section class="contactUs font12">
+      <div class="contactUs__wrapper">
+        <div class="contactUs__form">
+          <h3 class="contactUs__title title title--contactSection">D'autres questions ?
+            <hr>
+          </h3>
+          <form action="">
+            <div class="contactUs__half bodytext">
+              <p class="contactUs__text">Nous n'avons malheureusement pas pu répondre à toutes vos questions&nbsp;? N'hésitez pas à nous contacter et
+                nous vous répondrons dès que possible.</p>
+              <div>
+                <label for="name">Nom / Prénom</label>
+                <input type="text" name="" id="name" placeholder="Nom / Prénom">
+              </div>
+              <div>
+                <label for="email">Email</label>
+                <input type="text" name="" id="email" placeholder="Email">
+              </div>
+              <div>
+                <label for="tel">Tel</label>
+                <input type="tel" name="" id="tel" placeholder="Numéro de téléphone">
+              </div>
+            </div>
+            <div class="contactUs__half bodytext">
+              <div>
+                <label for="subject">Objet du message</label>
+                <input type="subject" name="" id="subject" placeholder="Objet du message">
+              </div>
+              <div>
+                <label for="msg">Message</label>
+                <textarea name="" id="msg" cols="30" rows="10" placeholder="Tapez votre message ici..."></textarea>
+              </div>
+              <button class="btn btn--primary" type="submit">Envoyez</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="contactJob font12">
+      <h3 class="contactJob__title title title--contactSection">Vous cherchez du travail ?</h3>
+      <div class="contactJob__bodytext bodytext bodytext--contactJob ">
+        <p>
+          Nous recherchons régulièrement des personnes motivées pour nous aider durant l'été. N'hésitez pas à nous contacter pour en
+          savoir plus à l'adresse :
+          <br>
+          <a class="contactJob__email" href="mailto:jobs@espace-fun.be">jobs@espace-fun.be</a>
+        </p>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -125,7 +338,7 @@
         <div class="newsletter__title title title--footer">Inscrivez-vous à notre newsletter</div>
         <div class="newsletter__bodytext bodytext bodytext--footer">et soyez le premier informé de nos évènements&nbsp;!</div>
         <div class="newsletter__form">
-          <form  action="">
+          <form action="">
             <label class="newsletter__label" for="email">Email</label>
             <input class="newsletter__input" name="email" type="email" placeholder="Email">
             <button class="newsletter__btn far fa-envelope" type="submit"></button>
@@ -138,20 +351,20 @@
       <nav class="disclaimer">
         <ul class="disclaimer__list">
           <li class="disclaimer__item">
-            <a href="contact.html" class="disclaimer__link">Contact</a>
+            <a href="page-contact.html" class="disclaimer__link">Contact</a>
           </li>
           <li class="disclaimer__separator">•</li>
           <li class="disclaimer__item">
-            <a href="partners.html" class="disclaimer__link">Partenaires</a>
+            <a href="page-partners.html" class="disclaimer__link">Partenaires</a>
           </li>
           <li class="disclaimer__separator">•</li>
           <li class="disclaimer__item">
-            <a href="general-conditions.html" class="disclaimer__link">Conditions générales</a>
+            <a href="page-general-conditions.html" class="disclaimer__link">Conditions générales</a>
           </li>
         </ul>
       </nav>
       <small class="disclaimer__copyrights">
-        <img class="disclaimer__logo" src="img/logo-espacefun_noir-small.png" alt="Logo de l'Espace Fun"> 
+        <img class="disclaimer__logo" src="img/logo-espacefun_noir-small.png" alt="Logo de l'Espace Fun">
         <span class="disclaimer__copyrights-year">&copy; 2018</span>
       </small>
       <small class="disclaimer__credits bodytext">

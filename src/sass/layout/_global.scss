@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden;
+  color: $color-gray;
 }
 
 .btn {
@@ -29,6 +30,13 @@ body {
   &--option {
     padding: 1em 2em;
   }
+  &--round {
+    padding: 5px;
+    padding-top: 3px;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    font-size: 1.4em;
+  }
 }
 
 .wrapper {
@@ -45,6 +53,9 @@ body {
   }
   &--shop {
     background: url('../img/header_shop.jpg') center/cover;
+  }
+  &--contact {
+    background: url('../img/header_contact.jpg') center/cover;
   }
   color: $color-white;
   &::after {
@@ -152,7 +163,7 @@ body {
     left: auto;
     height: auto;
     transform: translate(0, 0);
-    @media screen and (min-width:$desktopS){
+    @media screen and (min-width: $desktopS) {
       width: 100em;
     }
   }
@@ -179,7 +190,7 @@ body {
       top: .5em;
       border: 1px solid $color-white;
       border-top: 0;
-      @media screen and (min-width:$desktopS){
+      @media screen and (min-width: $desktopS) {
         // top: 0.7em;
       }
     }
@@ -212,7 +223,7 @@ body {
       width: 100%;
       background-color: $color-white;
       box-shadow: 0 0 5px rgba($color: $color-black, $alpha: 0.4);
-      @media screen and (min-width:$desktopS){
+      @media screen and (min-width: $desktopS) {
         top: 3.5em;
       }
     }

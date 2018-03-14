@@ -18,44 +18,51 @@
     width: 100%;
   }
   &__block {
-    @include flex($d:column, $w:nowrap, $j-c:flex-end, $a-i:flex-end);
+    @include flex($d: column, $w:nowrap, $j-c:flex-end, $a-i:flex-end);
     background-color: $color-white;
-    overflow: hidden;
     position: relative;
     width: 100%;
     min-height: 30em;
     @extend %shadow;
+    overflow: hidden;
     &--btn-center {
       align-items: center;
     }
   }
   &__text-container {
-    @include posa($top: 50%, $left:50%, $x:-50%, $y:-50%);
     text-align: center;
     padding: 4em;
     width: 100%;
-  }
-  &__bodytext-container {
-    p {}
+    @media screen and (min-width: $tablet) {
+      @include posa($top: 50%, $left:50%, $x:-50%, $y:-50%);
+    }
   }
   &__btn {
     background-color: transparent;
     border: 0;
     z-index: 2;
+    @include flex($d:row, $w:nowrap, $j-c:flex-start, $a-i:center);
     &--std {
       margin-bottom: 3em;
-      // width: 10em;
       font-size: 1.2em;
       border: 2px solid $color-black;
       z-index: 2;
     }
+    i {
+      margin: .3em;
+    }
+    &:hover {
+      text-decoration: underline;
+      i {
+        text-decoration: none;
+      }
+    }
   }
 }
 
-@media screen and (min-width:$mobileL){
+@media screen and (min-width:$mobileL) {
   .option {
     &__text-container {
-      max-width: 60em;
       padding: 8em;
     }
   }
