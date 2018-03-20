@@ -13,3 +13,13 @@ var swiper = new Swiper('.swiper-container', {
     prevEl: '.swiper-button-prev',
   },
 });
+
+var $windMod = $('.module-wind');
+$windMod.click(function(){
+  $(this).toggleClass('active');
+  if (!$windMod.hasClass('active')) {
+    $('.module-wind__btn').html('+');
+  } else {
+    $('.module-wind__btn').html('-');
+  }
+});
