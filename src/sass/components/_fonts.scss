@@ -4,17 +4,20 @@ $font-title: 'Quicksand',
 sans-serif;
 $font-bodytext: 'Quicksand',
 sans-serif;
-
 /* STYLES to EXTEND */
+
 .font10 {
   font-size: 10px;
 }
+
 .font12 {
   font-size: 12px;
 }
+
 .font14 {
   font-size: 14px;
 }
+
 .font16 {
   font-size: 16px;
 }
@@ -52,6 +55,13 @@ sans-serif;
       font-size: 1.6em;
     }
   }
+  &--archive {
+    font-size: 1.6em;
+    @media screen and (min-width: $tablet) {
+      font-size: 2em;
+      margin-bottom: 1em;
+    }
+  }
   &--option {
     font-size: 3em;
   }
@@ -61,11 +71,11 @@ sans-serif;
       font-size: 2em;
       line-height: 1.2em;
       text-align: center;
-      @media screen and (min-width:$mobileL){
+      @media screen and (min-width: $mobileL) {
         font-size: 3em;
       }
-      @media screen and (min-width:$tablet){
-      font-size: 3.5em;
+      @media screen and (min-width:$tablet) {
+        font-size: 3.5em;
       }
     }
   }
@@ -135,8 +145,29 @@ sans-serif;
     text-align: center;
   } // PAGE NAUTIQUE
   &--option {
-    font-size: 1.2em;
-    @media screen and (min-width: $tablet) {
+    font-size: 1.3em;
+    @media screen and (min-width: $mobileL) {
+      font-size: 1.6em;
+    }
+    &-bold {
+      font-weight: bold;
+    }
+    &-mini {
+      font-size: .7em;
+    }
+    &-margin {
+      margin-bottom: 1.5em;
+    }
+    &-lhmin {
+      line-height: 1em;
+    }
+  }
+  &--tab {
+    font-size: 1em;
+    &-bold {
+      font-weight: 600;
+    }
+    @media screen and (min-width:$mobileL) {
       font-size: 1.4em;
     }
   } // PAGE CONTACT
@@ -169,7 +200,7 @@ sans-serif;
     }
   }
   &--contactJob {
-    @media screen and (min-width:$tablet){
+    @media screen and (min-width: $tablet) {
       font-size: 1.4em;
     }
   }
@@ -179,6 +210,9 @@ sans-serif;
       font-size: .9em;
       line-height: .5em;
     }
+  }
+  &--underline {
+    text-decoration: underline;
   }
 }
 
@@ -197,26 +231,20 @@ sans-serif;
 .navbar {
   @include myfont($font-title);
   text-align: center;
-  &__link {
+  &__item {
     font-size: 2em;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    &--sub {
-      font-size: 1.6em;
+    &--lvl2 {
+      font-size: .8em;
       font-weight: 400;
     }
     @media screen and (min-width:$tablet) {
       font-size: 1em;
-      &--sub {
-        font-size: .8em;
-      }
     }
     @media screen and (min-width:$desktopS) {
       font-size: 1.4em;
-      &--sub {
-        font-size: 1.2em;
-      }
     }
   }
 }

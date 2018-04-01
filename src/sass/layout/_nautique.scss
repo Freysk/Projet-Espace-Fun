@@ -1,12 +1,9 @@
-.cta--shop {
-  margin-top: 0;
+.header--nautique::after {
+  display: none;
 }
 
-.options {
-  width: 100%;
-  background-color: #eee;
-  padding-top: 3em;
-  padding-bottom: 10em;
+.cta--shop {
+  margin-top: 0;
 }
 
 .option {
@@ -23,6 +20,12 @@
     position: relative;
     width: 100%;
     min-height: 30em;
+    &--big-container {
+      min-height: 40em;
+      @media screen and (max-width: $mobileS) {
+        min-height: 55em;
+      }
+    }
     @extend %shadow;
     overflow: hidden;
     &--btn-center {
@@ -30,40 +33,102 @@
     }
   }
   &__text-container {
-    text-align: center;
-    padding: 4em;
     width: 100%;
+    height: 90%;
+    text-align: center;
+    padding: 0 4em;
+    @include flex($d: column, $w:nowrap, $j-c:center, $a-i:center);
     @media screen and (min-width: $tablet) {
       @include posa($top: 50%, $left:50%, $x:-50%, $y:-50%);
     }
   }
+  &__bodytext-container {
+    width: 100%; // debug ie
+  }
   &__btn {
-    background-color: transparent;
-    border: 0;
+    position: absolute;
+    bottom: 0;
+    @include flex($d: row, $w:nowrap, $j-c:flex-start, $a-i:center);
     z-index: 2;
-    @include flex($d:row, $w:nowrap, $j-c:flex-start, $a-i:center);
+    transition: all .3s ease-in-out;
+    border: 0;
+    background-color: transparent; // btn reset
     &--std {
       margin-bottom: 3em;
       font-size: 1.2em;
       border: 2px solid $color-black;
       z-index: 2;
     }
+    &--right {
+      @media screen and (min-width: $tablet) {
+        right: 0;
+      }
+    }
+    &--left {
+      @media screen and (min-width: $tablet) {
+        left: 0;
+      }
+    }
     i {
       margin: .3em;
     }
     &:hover {
-      text-decoration: underline;
-      i {
-        text-decoration: none;
-      }
+      text-decoration: none;
     }
+    &--right:hover {
+      margin-right: -10px;
+    }
+    &--left:hover {
+      margin-left: -10px;
+    }
+    &:focus {
+      outline: none;
+    }
+    &--contact {
+      margin-top: 2em;
+    }
+  }
+  &__conditions {
+    margin-bottom: 2em;
+  }
+  &__prices {
+    width: 200px;
+    @include flex($d: row, $w:nowrap, $j-c:space-between, $a-i:stretch);
+    &--last {
+      margin-bottom: 1em;
+    }
+    @media screen and (min-width:$mobileL) {
+      width: 350px;
+    }
+  }
+  &__choice {
+    @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:flex-start);
+  }
+}
+
+.option__block-el {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  transition: all .5s ease-in-out;
+  @include flex($d: row, $w:nowrap, $j-c:center, $a-i:flex-start);
+  &-left {
+    left: -50%;
+  }
+  &-right {
+    left: 150%;
+  }
+  &-visible {
+    left: 50%;
   }
 }
 
 @media screen and (min-width:$mobileL) {
   .option {
     &__text-container {
-      padding: 8em;
+      padding: 0 8em;
     }
   }
 }
@@ -84,9 +149,13 @@
       height: 90%;
       top: 2em;
       right: 2em;
+      position: relative;
+    }
+    &__title {
+      margin-bottom: .5em;
     }
     &__text-container {
-      padding: 8em;
+      padding: 0 8em;
     }
   }
   &.option:nth-of-type(even) {
@@ -97,8 +166,77 @@
     .option__illus {
       order: 1;
     }
-    .option__btn {
-      align-self: flex-start;
+  }
+}
+
+.tab {
+  display: grid;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: .5em;
+  grid-template-columns: minmax(70px, 300px) repeat(3, minmax(40px, 1fr));
+  grid-template-areas: "greement pr20 pr35 pr45" "combi forfait forfait forfait" "harnais forfait forfait forfait" "chaussons forfait forfait forfait";
+  @media screen and (min-width: $mobileL) {
+    max-width: 550px;
+    grid-template-columns: minmax(100px, 300px) repeat(3, minmax(60px, 1fr));
+  }
+  &__title {
+    margin-bottom: .5em;
+    &--greement {
+      grid-area: greement;
+      margin-bottom: .5em;
     }
+    &--combi {
+      grid-area: combi;
+    }
+    &--harnais {
+      grid-area: harnais;
+    }
+    &--chaussons {
+      grid-area: chaussons;
+    }
+  }
+  &__price {
+    &--20 {
+      grid-area: pr20;
+    }
+    &--35 {
+      grid-area: pr35;
+    }
+    &--45 {
+      grid-area: pr45;
+    }
+  }
+  &__forfait {
+    grid-area: forfait;
+    align-self: center;
+    font-size: 1.3em;
+    border: 1px dashed $color-gray;
+    width: 100%;
+    height: 100%;
+    @include flex($d: row, $w:nowrap, $j-c:center, $a-i:center);
+  }
+}
+
+.tab-voile {
+  margin-bottom: 1em;
+  @include flex($d:row, $w:wrap, $j-c:center, $a-i:stretch);
+  @media screen and (min-width:$tablet){
+    margin-bottom: 0;
+  }
+  &__row {
+    width: 25%;
+    @include flex($d:column, $w:nowrap, $j-c:flex-start, $a-i:center);
+    margin: 1em;
+  }
+  &__title {
+    width: 100%;
+
+  }
+  &__cell {
+    width: 15px;
+    min-width: 40px;
+    max-width: 80px;
+
   }
 }

@@ -170,14 +170,19 @@
       font-size: 0.8em;
     }
   }
+  em {
+    color: red;
+  }
 }
 
 .faq {
-  max-width: 1280px;
+  max-width: 900px;
   margin: 0 auto;
   @include flex($d: column, $w:nowrap, $j-c:flex-start, $a-i:center);
   &__question-container {
     margin-bottom: 2em;
+    width: 100%;
+    z-index: 10;
   }
   &__btn {
     padding-top: 2em;
@@ -194,7 +199,7 @@
   margin-top: 10em;
   background: url('../img/bg_contact-form.jpg') center/cover;
   position: relative;
-  z-index: -2;
+  z-index: 0;
   &__title {
     display: inline-block;
     hr {
@@ -267,11 +272,11 @@
     @include flex($d: column, $w:nowrap, $j-c:space-between, $a-i:stretch);
     @media screen and (min-width: $mobileL) {
       width: 50%;
-      &:first-child {
+      &:nth-child(2) {
         border-right: 1px solid $color-black;
         padding-right: 3em;
       }
-      &:nth-child(2) {
+      &:nth-child(3) {
         padding-left: 3em;
       }
     }

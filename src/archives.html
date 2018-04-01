@@ -16,10 +16,10 @@
   <link rel="stylesheet" href="css/style.min.css">
 </head>
 
-<body class="groupespages">
+<body class="homepage">
 
   <!-- HEADER -->
-  <header class="header header--groupes">
+  <header class="header header--home">
     <!-- NAVIGATION -->
     <div class="navigation">
       <a href="index.html" class="logo">
@@ -48,7 +48,8 @@
             <a href="page-espaceplage.html" class="navbar__link">Espace plage</a>
           </li>
           <li class="navbar__item">
-            <a href="page-groupes.html" class="navbar__link">Groupes</a>
+            <a href="
+            page-groupes.html" class="navbar__link">Groupes</a>
           </li>
           <li class="navbar__item">
             <a href="page-shop.html" class="navbar__link">Shop</a>
@@ -84,6 +85,27 @@
       <button class="module-lang__btn fas fa-caret-down"></button>
     </div>
 
+    <!-- MODULE WINDGURU -->
+    <a class="module-wind__external-link" href="https://www.windguru.cz/319049" target="_blank">Prévisions du vent
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+    <div class="module-wind">
+      <div class="module-wind__visible-block">
+        <div class="module-wind__rot-block">
+          <button class="module-wind__btn title title--wind">+</button>
+          <span class="module-wind__title title title--wind">Prévisions du vent</span>
+          <i class="module-wind__icon far fa-flag fa-lg" aria-hidden="true"></i>
+        </div>
+        <div class="module-wind__content bodytext bodytext--wind">
+          <!-- IFRAME WINDGURU -->
+          <iframe src="http://www.windguru.cz/int/distr_iframe.php?u=553506&amp;s=319049&amp;c=25ff3a00cc" width="560" height="315"
+            frameborder="0"></iframe>
+          <h3></h3>
+          <div style="font-size: 1.0em;"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- INDICATOR -->
     <div class="indicator">
       <img src="img/icon_mouse.png" alt="" class="indicator__mouse">
@@ -94,66 +116,78 @@
 
   <main class="content">
 
+<div id="container">
+	<div id="content" role="main">
+
     <!-- SECTION PRESENTATION ESPACE FUN -->
-    <section class="intro section">
-      <h1 class="intro__title title title--primary">Groupes</h1>
-      <div class="intro__bodytext bodytext bodytext--primary">
-        A l'Espace Fun, nous avons une longue expérience des activités de groupes ! Que ce soit des entreprises, des écoles, des associations ou même des particuliers.  
-        <p>Régulièrement nous accueillons des groupes, nous les aidons dans l'organisation de leur évènements et leur suggérons un grand nombre d'activité. Volleys, balade en nature, activités nautiques, moments détente,...</p>
+    <section class="intro--accueil section">
+      <h1 class="intro--accueil__title title title--primary">Archives</h1>
+      <div class="intro--accueil__bodytext bodytext bodytext--primary">Ici, vous trouverez toute notre actualité !</div>
+    </section>
+
+<!-- ACTUALITES -->
+<section class="news section">
+  <h3 class="news__title title title--secondary">Évènements</h3>
+  <p class="news__subtitle bodytext bodytext--subtitle">Toute notre actualité&nbsp;! Nous évènements, nos dernières activités, vous saurez tout&nbsp;!</p>
+
+  <!-- ARTICLES / NEWS -->
+  <div class="articles-container">
+    <!-- LAST ARTICLE -->
+    <article class="article article--last">
+      <!-- ajout de la classe last en js -->
+      <div class="article__illus article--last__illus" style="background:url('img/image_kayak.jpg') center/cover;"></div>
+      <div class="article__text-container article--last__text-container">
+        <small class="article--last__date bodytext bodytext--date-last">10/04/2017</small>
+        <h5 class="article--last__title title title--article-last">Ceci est le titre du dernier article</h5>
+        <div class="article--last__excerpt bodytext bodytext--article-last">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem nulla, possimus quisquam expedita atque ullam
+            consequatur necessitatibus labore aspernatur cumque laudantium corrupti id quod reiciendis unde animi earum,
+            optio quam? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur officia nemo sint impedit ea vero,
+            exercitationem, corporis soluta non laudantium molestiae repellat inventore modi fugit quisquam ratione id hic
+            laborum. </p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque fuga autem totam ducimus temporibus quibusdam mollitia
+            dolorum dignissimos quisquam iure dolorem impedit, architecto recusandae praesentium veniam tempora, beatae at
+            deleniti.</p>
+        </div>
       </div>
-    </section>
-
-    <section class="options options--groupes">
-      <article class="option">
-        <img class="option__illus" src="img/groupes-entreprises.jpg" alt="">
-        <div class="option__block">
-          <div class="option__text-container">
-            <h3 class="option__title title title--option">Entreprises</h3>
-            <div class="option__bodytext-container bodytext bodytext--option">
-              Vous êtes à la recherche d'une activité qui re-solidifiera les liens de votre équipe ? L'Espace Fun est habitué dans l'organisation de team-building, jeux, activités en nature, balades et grand espace...Nous avons l'environnement idéal pour vous accueillir !
-            </div>
-          </div>
+    </article>
+    <!-- OTHERS ARTICLES -->
+    <div class="articles-minimized">
+      <article class="article" data="url-thumbnail">
+        <div class="article__text-container">
+          <small class="article__date">10/04</small>
+          <h5 class="article__title title title--article">Titre d'un second article</h5>
+          <p class="article__excerpt bodytext bodytext--article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo, facilis saepe.</p>
         </div>
+        <button class="article__btn btn btn--article">Lire l'article...</button>
       </article>
-    
-      <article class="option">
-        <img class="option__illus" src="img/groupes-ecole.jpg" alt="">
-        <div class="option__block">
-          <div class="option__text-container">
-            <h3 class="option__title title title--option">Ecole & Associations</h3>
-            <div class="option__bodytext-container bodytext bodytext--option">
-              Les espaces plages et détentes de l'Espace Fun ont toujours ravi petits et grands, et c'est toujours un plaisir pour nous de vous accueillir ! Nous organisons des activités pour tous les âges et personne ne s'ennuie jamais ! 
-            </div>
-          </div>
+      <article class="article" data="url-thumbnail">
+        <div class="article__text-container">
+          <small class="article__date">10/04</small>
+          <h5 class="article__title title title--article">Titre d'un troisième article</h5>
+          <p class="article__excerpt bodytext bodytext--article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo, facilis saepe.</p>
         </div>
+        <button class="article__btn btn btn--article">Lire l'article...</button>
       </article>
-    
-      <article class="option">
-        <img class="option__illus" src="img/groupes-particuliers.jpg" alt="">
-        <div class="option__block">
-          <div class="option__text-container">
-            <h3 class="option__title title title--option">Particuliers</h3>
-            <div class="option__bodytext-container bodytext bodytext--option">
-              Vous avez l'âme d'un organisateur ? Vous avez toqué à la bonne porte, nous sommes également toujours ouvert aux particuliers qui souhaitent organiser des activités sportives ou ludiques en famille ou entre amis. N'hésitez pas à nous contacter pour savoir ce qu'il est possible et recevoir nos conseils et recommandations.
-            </div>
-          </div>
+      <article class="article" data="url-thumbnail">
+        <div class="article__text-container">
+          <small class="article__date">10/04</small>
+          <h5 class="article__title title title--article">Titre d'un quatrième article</h5>
+          <p class="article__excerpt bodytext bodytext--article">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nemo, facilis saepe.</p>
         </div>
+        <button class="article__btn btn btn--article">Lire l'article...</button>
       </article>
-    </section>
-
-<section class="cta cta--contacter section">
-  <h2 class="cta__title title title--secondary">Oui mais... Par où commencer ?</h2>
-  <div class="cta__bodytext-container bodytext">
-    Vous êtes convaincu mais ne savez pas par quel bout commencer ? 
-    <p>Alors, il ne suffit plus que nous contacter !</p>
+    </div>
   </div>
-  <a class="btn btn--primary btn--white" href="page-contact.html">Contactez-nous</a>
 </section>
 
+	</div><!-- #content -->
+</div><!-- #container -->
+
   </main>
-
+  
   <footer class="footer">
-
+  
     <div class="footer__first-part">
       <nav class="social">
         <div class="social__title title title--footer">Suivez-nous</div>
@@ -165,8 +199,8 @@
             <a href="" class="social__link social__link--yt fab fa-youtube"></a>
           </li>
           <!-- <li class="social__item">
-            <a href="" class="social__link social__link--rss fas fa-rss"></a>
-          </li> -->
+              <a href="" class="social__link social__link--rss fas fa-rss"></a>
+            </li> -->
         </ul>
       </nav>
       <div class="newsletter">
@@ -181,20 +215,20 @@
         </div>
       </div>
     </div>
-
+  
     <div class="footer__second-part">
       <nav class="disclaimer">
         <ul class="disclaimer__list">
           <li class="disclaimer__item">
-            <a href="page-contact.html" class="disclaimer__link">Contact</a>
+            <a href="contact.html" class="disclaimer__link">Contact</a>
           </li>
           <li class="disclaimer__separator">•</li>
           <li class="disclaimer__item">
-            <a href="page-partners.html" class="disclaimer__link">Partenaires</a>
+            <a href="partners.html" class="disclaimer__link">Partenaires</a>
           </li>
           <li class="disclaimer__separator">•</li>
           <li class="disclaimer__item">
-            <a href="page-general-conditions.html" class="disclaimer__link">Conditions générales</a>
+            <a href="general-conditions.html" class="disclaimer__link">Conditions générales</a>
           </li>
         </ul>
       </nav>
@@ -207,13 +241,15 @@
         <br>Keep it Simple / Frédéric Defays
       </small>
     </div>
-
+  
   </footer>
-
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD13I3jJniuhU0QJ8alaBiyWw9lS1xkxcQ&callback=initMap"></script>
-  <script src="js/gmaps.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.6/js/swiper.min.js"></script>
+  <!-- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD13I3jJniuhU0QJ8alaBiyWw9lS1xkxcQ&callback=initMap"></script> -->
+  <!-- <script src="js/gmaps.min.js"></script> -->
+  <script src="js/home.min.js"></script>
   <script src="js/main.min.js"></script>
-</body>
-
-</html>
+  </body>
+  
+  </html>
